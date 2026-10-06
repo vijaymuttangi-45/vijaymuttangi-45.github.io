@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Vijay Muttangi — CSIT Student & Aspiring Software Engineer at REVA University">
+
+    <title>Vijay Muttangi | CSIT Student & Aspiring Software Engineer</title>
+
+    <style>
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background: #080d17;
+            color: #e8eef8;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 90px 0;
+            scroll-margin-top: 80px;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(8, 13, 23, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid #1d2a3d;
+        }
+
+        .nav-container {
+            min-height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #4f9cff;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #9daabd;
+            font-size: 0.94rem;
+            font-weight: 500;
+
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: calc(100vh - 68px);
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+            height: 450px;
+
+            right: -180px;
+            top: 40px;
+
+            background: #123b6b;
+            opacity: 0.18;
+
+            border-radius: 50%;
+            filter: blur(110px);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            padding: 7px 14px;
+            margin-bottom: 22px;
+
+            border: 1px solid #263b57;
+            border-radius: 50px;
+
+            background: #0d1625;
+            color: #72b0ff;
+
+            font-size: 0.86rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.8rem);
+
+            line-height: 1;
+            letter-spacing: -4px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4f9cff;
+        }
+
+        .hero h2 {
+            color: #c6d1e1;
+
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+            font-weight: 500;
+
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 680px;
+
+            color: #929fb3;
+
+            font-size: 1.08rem;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 11px 20px;
+
+            border-radius: 8px;
+
+            font-size: 0.94rem;
+            font-weight: 650;
+
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: #4f9cff;
+            color: #06101e;
+
+            border: 1px solid #4f9cff;
+        }
+
+        .btn-primary:hover {
+            background: #72b0ff;
+            border-color: #72b0ff;
+
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #0d1523;
+            color: #c9d4e5;
+
+            border: 1px solid #2b3b52;
+        }
+
+        .btn-secondary:hover {
+            color: #ffffff;
+
+            border-color: #4f9cff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           SECTION HEADERS
+        ========================================= */
+
+        .section-header {
+            margin-bottom: 38px;
+        }
+
+        .section-header h2 {
+            font-size: 2.15rem;
+            letter-spacing: -1px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            max-width: 650px;
+
+            color: #8491a5;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        #about {
+            border-top: 1px solid #182335;
+            border-bottom: 1px solid #182335;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.4fr 0.9fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #a1adbe;
+
+            margin-bottom: 16px;
+        }
+
+        .about-text strong {
+            color: #e7edf7;
+        }
+
+        .about-card {
+            background: #0e1726;
+
+            border: 1px solid #1e2d42;
+            border-radius: 14px;
+
+            padding: 25px;
+        }
+
+        .about-card h3 {
+            font-size: 1.05rem;
+
+            margin-bottom: 18px;
+        }
+
+        .journey-item {
+            display: flex;
+
+            gap: 13px;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid #1c293b;
+        }
+
+        .journey-item:last-child {
+            border-bottom: none;
+        }
+
+        .journey-dot {
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+
+            margin-top: 9px;
+
+            border-radius: 50%;
+
+            background: #4f9cff;
+        }
+
+        .journey-item span {
+            color: #9ba8ba;
+
+            font-size: 0.93rem;
+        }
+
+
+        /* =========================================
+           PROJECTS
+        ========================================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+
+            background: #0e1726;
+
+            border: 1px solid #1e2d42;
+            border-radius: 14px;
+
+            padding: 27px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #34567d;
+
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-number {
+            color: #4f9cff;
+
+            font-size: 0.78rem;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+
+            margin: 12px 0 10px;
+        }
+
+        .project-card p {
+            color: #8f9caf;
+
+            font-size: 0.93rem;
+
+            margin-bottom: 25px;
+
+            flex-grow: 1;
+        }
+
+        .project-link {
+            color: #72b0ff;
+
+            font-size: 0.92rem;
+            font-weight: 650;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================================
+           SKILLS
+        ========================================= */
+
+        #skills {
+            border-top: 1px solid #182335;
+        }
+
+        .skills-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 9px 16px;
+
+            background: #0e1726;
+
+            border: 1px solid #26374e;
+            border-radius: 8px;
+
+            color: #c6d1e1;
+
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            transition: all 0.25s ease;
+        }
+
+        .skill:hover {
+            color: #ffffff;
+
+            border-color: #4f9cff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact-box {
+            text-align: center;
+
+            padding: 55px 30px;
+
+            background: #0e1726;
+
+            border: 1px solid #1e2d42;
+            border-radius: 16px;
+        }
+
+        .contact-box h2 {
+            font-size: 2.2rem;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            max-width: 600px;
+
+            margin: 0 auto 28px;
+
+            color: #929fb3;
+        }
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: #72b0ff;
+
+            font-weight: 600;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            border-top: 1px solid #182335;
+
+            padding: 25px;
+
+            text-align: center;
+
+            color: #68768a;
+
+            font-size: 0.86rem;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .nav-container {
+                min-height: 62px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+
+            .hero {
+                min-height: calc(100vh - 62px);
+            }
+
+            .hero h1 {
+                font-size: 3.4rem;
+
+                letter-spacing: -2.5px;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.85rem;
+            }
+
+            .contact-box {
+                padding: 40px 20px;
+            }
+        }
+
+
+        /* =========================================
+           SMALL PHONES
+        ========================================= */
+
+        @media (max-width: 430px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links li:nth-child(3) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav>
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                Vijay<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    2nd-Year CSIT Student · REVA University
+                </div>
+
+                <h1>
+                    Vijay <span>Muttangi</span>
+                </h1>
+
+                <h2>
+                    CSIT Student &amp; Aspiring Software Engineer
+                </h2>
+
+                <p>
+                    I'm a 2nd-year Computer Science and Information
+                    Technology student at REVA University, focused on
+                    building strong programming fundamentals, solving
+                    problems with DSA, and growing into a software
+                    engineer through consistent hands-on learning.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <!-- GitHub -->
+
+                    <a
+                        href="https://github.com/vijaymuttangi-45"
+                        class="btn btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+
+                    <!-- LinkedIn -->
+
+                    <a
+                        href="https://www.linkedin.com/in/vijaymuttangi045"
+                        class="btn btn-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn ↗
+                    </a>
+
+
+                    <!-- Scroll to Projects -->
+
+                    <a
+                        href="#projects"
+                        class="btn btn-secondary"
+                    >
+                        View My Work ↓
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         ABOUT ME
+    ========================================== -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>
+                    About Me
+                </h2>
+
+                <p>
+                    Learning the fundamentals, building projects,
+                    and developing a strong problem-solving mindset.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-text">
+
+                    <p>
+                        I'm <strong>Vijay Muttangi</strong>, a
+                        2nd-year CSIT student at
+                        <strong>REVA University</strong>. My current
+                        learning path is focused on understanding how
+                        software is built from the fundamentals upward.
+                    </p>
+
+                    <p>
+                        I'm strengthening my programming skills with
+                        <strong>C and C++</strong>, while using
+                        <strong>Data Structures and Algorithms</strong>
+                        to improve my logical thinking and approach
+                        to problem solving.
+                    </p>
+
+                    <p>
+                        Alongside programming, I'm learning practical
+                        software development workflows such as Git,
+                        GitHub, VS Code, collaboration, and maintaining
+                        organized coding projects.
+                    </p>
+
+                    <p>
+                        My goal is to keep building consistently,
+                        learn from every project, and gradually
+                        develop the skills needed to become a capable
+                        software engineer.
+                    </p>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <h3>
+                        My Learning Path
+                    </h3>
+
+
+                    <div class="journey-item">
+
+                        <div class="journey-dot"></div>
+
+                        <span>
+                            Strengthening C/C++ programming fundamentals
+                        </span>
+
+                    </div>
+
+
+                    <div class="journey-item">
+
+                        <div class="journey-dot"></div>
+
+                        <span>
+                            Practicing Data Structures &amp; Algorithms
+                        </span>
+
+                    </div>
+
+
+                    <div class="journey-item">
+
+                        <div class="journey-dot"></div>
+
+                        <span>
+                            Solving structured LeetCode problems
+                        </span>
+
+                    </div>
+
+
+                    <div class="journey-item">
+
+                        <div class="journey-dot"></div>
+
+                        <span>
+                            Learning Git, GitHub &amp; collaborative development
+                        </span>
+
+                    </div>
+
+
+                    <div class="journey-item">
+
+                        <div class="journey-dot"></div>
+
+                        <span>
+                            Building projects and documenting my progress
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section id="projects">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <h2>
+                    Projects / Work Artifacts
+                </h2>
+
+                <p>
+                    Selected repositories documenting my programming
+                    journey and practical development experience.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- =================================
+                     PROJECT 1
+                ================================== -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        01 / GITHUB
+                    </div>
+
+                    <h3>
+                        hello-world
+                    </h3>
+
+                    <p>
+                        Initial environment setup and hands-on practice
+                        with Git and GitHub. This repository represents
+                        the starting point of my development workflow.
+                    </p>
+
+                    <a
+                        href="https://github.com/vijaymuttangi-45/hello-world"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Repository ↗
+                    </a>
+
+                </article>
+
+
+                <!-- =================================
+                     PROJECT 2
+                ================================== -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        02 / COLLABORATION
+                    </div>
+
+                    <h3>
+                        pair-programming-collaboration
+                    </h3>
+
+                    <p>
+                        A collaboration work artifact documenting the
+                        use of VS Code Live Share and GitLens while
+                        exploring collaborative software development
+                        workflows.
+                    </p>
+
+                    <a
+                        href="https://github.com/vijaymuttangi-45"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View on GitHub ↗
+                    </a>
+
+                </article>
+
+
+                <!-- =================================
+                     PROJECT 3
+                ================================== -->
+
+                <article class="project-card">
+
+                    <div class="project-number">
+                        03 / DSA
+                    </div>
+
+                    <h3>
+                        leetcode-solutions
+                    </h3>
+
+                    <p>
+                        A structured collection of C++ solutions to
+                        LeetCode problems, created to practice algorithms,
+                        data structures, logical thinking, and problem
+                        solving.
+                    </p>
+
+                    <a
+                        href="https://github.com/vijaymuttangi-45/leetcode-solutions"
+                        class="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Repository ↗
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TECHNICAL SKILLS
+    ========================================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+                <p>
+                    Technologies and computer science concepts I'm
+                    currently learning and practicing.
+                </p>
+
+            </div>
+
+
+            <div class="skills-list">
+
+                <span class="skill">
+                    C
+                </span>
+
+                <span class="skill">
+                    C++
+                </span>
+
+                <span class="skill">
+                    Data Structures &amp; Algorithms
+                </span>
+
+                <span class="skill">
+                    Git
+                </span>
+
+                <span class="skill">
+                    GitHub
+                </span>
+
+                <span class="skill">
+                    SQL
+                </span>
+
+                <span class="skill">
+                    Python
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+
+            <div class="contact-box">
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+                <p>
+                    Interested in connecting, collaborating, or
+                    following my learning journey? Feel free to
+                    reach out.
+                </p>
+
+
+                <div class="contact-links">
+
+
+                    <!-- GitHub -->
+
+                    <a
+                        href="https://github.com/vijaymuttangi-45"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+
+                    <!-- LinkedIn -->
+
+                    <a
+                        href="https://www.linkedin.com/in/vijaymuttangi045"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn ↗
+                    </a>
+
+
+                    <!-- Email
+                         Replace with your actual email -->
+
+                    <a
+                        href="mailto:your-vijaymuttangi970@gmail.com"
+                    >
+                        Email ✉
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Vijay Muttangi · Built with HTML &amp; CSS
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
